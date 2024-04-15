@@ -1,0 +1,13 @@
+Explanation of design document for final programming assignment 2024
+=======================================================================
+Inspired by the playdate by house house
+
+Includes: Snare drum and kick drum buttons
+          A crank that the player can spin/crank to produce saxaphone/trumbone sounds depending on the direction
+          A midi piano at the base 
+          A pullable string that produces funny sounds
+          An animated display in the centre
+          Pitch Shifters the player can drag and drop onto the top of the machine
+
+Name: Symphonic Script/The Code Conductor
+          
