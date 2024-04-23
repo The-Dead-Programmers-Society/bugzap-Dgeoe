@@ -11,7 +11,9 @@ func _process(delta):
 func _on_button_button_down():
 	dragging =  true 
 	of = get_global_mouse_position()- global_position
+	$AudioStreamPlayer2D.play()
 
 
 func _on_button_button_up():
 	dragging = false
+	$AudioStreamPlayer2D2.play()

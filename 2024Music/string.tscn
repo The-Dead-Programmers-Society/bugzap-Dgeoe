@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5p7326nqm0l1"]
+[gd_scene load_steps=10 format=3 uid="uid://c5p7326nqm0l1"]
 
 [ext_resource type="Texture2D" uid="uid://d02fiahe7mp4" path="res://Textures/pivot.png" id="1_cep2i"]
 [ext_resource type="Script" path="res://Handle.gd" id="2_d73ny"]
 [ext_resource type="Texture2D" uid="uid://cx3b4i8oxyxbs" path="res://Textures/handle.png" id="3_3f3q4"]
+[ext_resource type="AudioStream" uid="uid://bbolyb64f3r0b" path="res://Sounds/BuildUp.wav" id="4_vbjma"]
+[ext_resource type="AudioStream" uid="uid://bjf2hj6ygqqb5" path="res://Sounds/Release.wav" id="5_7kfhw"]
+[ext_resource type="AudioStream" uid="uid://d1xfjffxn0u5f" path="res://Sounds/Cartoon Slide Whistle Down Sound Effect.mp3" id="6_mqulm"]
+[ext_resource type="AudioStream" uid="uid://38wwdnye8amf" path="res://Sounds/Cartoon Slide Whistle Up Sound Effect.mp3" id="7_b2qfg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omsty"]
 size = Vector2(30, 55)
@@ -54,6 +58,12 @@ offset_right = -6.0
 offset_bottom = -5.0
 scale = Vector2(3.8, 3.64)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Handle"]
+stream = ExtResource("4_vbjma")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Handle"]
+stream = ExtResource("5_7kfhw")
+
 [node name="Handle2" type="RigidBody2D" parent="."]
 position = Vector2(276, 54)
 scale = Vector2(1.3, 1.3)
@@ -77,6 +87,12 @@ offset_top = -13.0
 offset_right = -6.0
 offset_bottom = -5.0
 scale = Vector2(3.8, 3.64)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Handle2"]
+stream = ExtResource("6_mqulm")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Handle2"]
+stream = ExtResource("7_b2qfg")
 
 [node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
 position = Vector2(177, 71)
