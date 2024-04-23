@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://dknilarsgh5ec"]
+[gd_scene load_steps=2 format=3 uid="uid://dknilarsgh5ec"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://Slider.gd" id="1_wswyg"]
+
+[node name="Slider" type="Node2D"]
+position = Vector2(30, 30)
+scale = Vector2(2, 2)
+script = ExtResource("1_wswyg")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 1.0
+offset_right = 186.0
+offset_bottom = 16.0
+min_value = -30.0
+max_value = 0.0
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

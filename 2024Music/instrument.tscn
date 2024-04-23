@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2bb5yqrfpoiu"]
+[gd_scene load_steps=17 format=3 uid="uid://c2bb5yqrfpoiu"]
 
 [ext_resource type="PackedScene" uid="uid://i0mh07ofx6ux" path="res://Test.tscn" id="1_yu81d"]
 [ext_resource type="Texture2D" uid="uid://dnm42e3d2rnvx" path="res://Textures/Solid_red.svg.png" id="2_xwkaw"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dddo7hhqlv41n" path="res://Textures/pipe.png" id="12_du365"]
 [ext_resource type="AudioStream" uid="uid://cx18orj60dx2b" path="res://Sounds/metal-pipe-foley-90737.mp3" id="13_24ayo"]
 [ext_resource type="Texture2D" uid="uid://de1b6vcpotb6q" path="res://Textures/LogoMusic.png" id="14_cyiw7"]
+[ext_resource type="PackedScene" uid="uid://dknilarsgh5ec" path="res://Sliders.tscn" id="16_g80ky"]
 
 [node name="Instrument" type="Node2D"]
 position = Vector2(-168, 2)
@@ -181,6 +182,10 @@ texture = ExtResource("14_cyiw7")
 [node name="Sound Strings" parent="." instance=ExtResource("7_856p4")]
 position = Vector2(722, 62)
 scale = Vector2(2, 2)
+
+[node name="Slider" parent="." instance=ExtResource("16_g80ky")]
+position = Vector2(723, 558)
+scale = Vector2(3, 3)
 
 [connection signal="pressed" from="Node2/Node/Kick beat/Button" to="Node2/Node/Kick beat/Button" method="_on_pressed"]
 [connection signal="pressed" from="Node2/Node/Kick Drum/Button" to="Node2/Node/Kick Drum/Button" method="_on_pressed"]

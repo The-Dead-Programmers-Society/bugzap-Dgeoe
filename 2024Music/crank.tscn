@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl8jcgb7howe8"]
 
-[ext_resource type="Texture2D" path="res://crank.png" id="1_na87q"]
+[ext_resource type="Texture2D" uid="uid://cfb0k6lgj21ul" path="res://Textures/crank.png" id="1_na87q"]
 [ext_resource type="Script" path="res://Crank.gd" id="2_ik51i"]
 
 [node name="Node2D" type="Node2D"]
