@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5p7326nqm0l1"]
 
-[ext_resource type="Texture2D" uid="uid://rrjc161guihe" path="res://pivot.png" id="1_ukd3f"]
+[ext_resource type="Texture2D" uid="uid://d02fiahe7mp4" path="res://Textures/pivot.png" id="1_cep2i"]
 [ext_resource type="Script" path="res://Handle.gd" id="2_d73ny"]
-[ext_resource type="Texture2D" uid="uid://bi7t73lo8numt" path="res://handle.png" id="2_ticag"]
+[ext_resource type="Texture2D" uid="uid://cx3b4i8oxyxbs" path="res://Textures/handle.png" id="3_3f3q4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omsty"]
 size = Vector2(30, 55)
@@ -26,7 +26,7 @@ position = Vector2(177, 72)
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(66, 13)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_ukd3f")
+texture = ExtResource("1_cep2i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1, 1)
@@ -40,7 +40,7 @@ script = ExtResource("2_d73ny")
 [node name="Sprite2D" type="Sprite2D" parent="Handle"]
 position = Vector2(14, 14)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_ticag")
+texture = ExtResource("3_3f3q4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Handle"]
 position = Vector2(1, 2)
@@ -64,7 +64,7 @@ script = ExtResource("2_d73ny")
 [node name="Sprite2D" type="Sprite2D" parent="Handle2"]
 position = Vector2(14, 14)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_ticag")
+texture = ExtResource("3_3f3q4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Handle2"]
 position = Vector2(1, 2)

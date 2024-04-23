@@ -1,20 +1,20 @@
 [gd_scene load_steps=16 format=3 uid="uid://c2bb5yqrfpoiu"]
 
 [ext_resource type="PackedScene" uid="uid://i0mh07ofx6ux" path="res://Test.tscn" id="1_yu81d"]
-[ext_resource type="Texture2D" uid="uid://bkwpxqclin2yu" path="res://Solid_red.svg.png" id="2_pc4dj"]
-[ext_resource type="Texture2D" uid="uid://0mkc2yrtk4u6" path="res://Pure_Green.svg.png" id="3_tqynx"]
-[ext_resource type="Texture2D" uid="uid://c7puu0lywvump" path="res://Solid_blue.svg.png" id="4_wiywl"]
-[ext_resource type="Texture2D" uid="uid://beyg4emmvub1x" path="res://Solid_pink.svg.png" id="5_msemt"]
-[ext_resource type="Texture2D" uid="uid://od2mv04gs70m" path="res://LogoMusic.png" id="6_3ehw3"]
+[ext_resource type="Texture2D" uid="uid://dnm42e3d2rnvx" path="res://Textures/Solid_red.svg.png" id="2_xwkaw"]
+[ext_resource type="Texture2D" uid="uid://brg1gvbokg3y0" path="res://Textures/Pure_Green.svg.png" id="3_8nff0"]
+[ext_resource type="Texture2D" uid="uid://b05yne2k8m2fa" path="res://Textures/Solid_blue.svg.png" id="4_hh65l"]
+[ext_resource type="Texture2D" uid="uid://xvw6mufmk3vo" path="res://Textures/Solid_pink.svg.png" id="5_xpiyd"]
+[ext_resource type="Texture2D" uid="uid://1vghtwd18pwg" path="res://Textures/kick.png" id="6_55515"]
 [ext_resource type="PackedScene" uid="uid://c5p7326nqm0l1" path="res://string.tscn" id="7_856p4"]
-[ext_resource type="Texture2D" uid="uid://bh2aovgj1gu6h" path="res://kick.png" id="8_udakt"]
+[ext_resource type="AudioStream" uid="uid://1rv8qenk4xnp" path="res://Sounds/cinematic-trash-kick-loop-132274.mp3" id="8_2w4ng"]
+[ext_resource type="AudioStream" uid="uid://boy2my2ix7tqp" path="res://Sounds/kick-183936.mp3" id="9_37o6c"]
 [ext_resource type="Script" path="res://Button.gd" id="9_nisj6"]
-[ext_resource type="AudioStream" uid="uid://c3a3n5b83bjyn" path="res://cinematic-trash-kick-loop-132274.mp3" id="10_s5w7k"]
-[ext_resource type="AudioStream" uid="uid://cs7ptchtyewfp" path="res://kick-183936.mp3" id="11_kvpmf"]
-[ext_resource type="Texture2D" uid="uid://bk25xaqvex3ba" path="res://snare.png" id="12_7cgqv"]
-[ext_resource type="AudioStream" uid="uid://7dumh5qe61v6" path="res://snare-112754.mp3" id="13_iwstf"]
-[ext_resource type="Texture2D" uid="uid://dpk5y65vligmr" path="res://pipe.png" id="14_7ipfq"]
-[ext_resource type="AudioStream" uid="uid://bhsy4r4g0kkqa" path="res://metal-pipe-foley-90737.mp3" id="15_78nmi"]
+[ext_resource type="Texture2D" uid="uid://5nss7s463snk" path="res://Textures/snare.png" id="10_qv4hc"]
+[ext_resource type="AudioStream" uid="uid://cftpysm54wdqm" path="res://Sounds/snare-112754.mp3" id="11_4axjp"]
+[ext_resource type="Texture2D" uid="uid://dddo7hhqlv41n" path="res://Textures/pipe.png" id="12_du365"]
+[ext_resource type="AudioStream" uid="uid://cx18orj60dx2b" path="res://Sounds/metal-pipe-foley-90737.mp3" id="13_24ayo"]
+[ext_resource type="Texture2D" uid="uid://de1b6vcpotb6q" path="res://Textures/LogoMusic.png" id="14_cyiw7"]
 
 [node name="Instrument" type="Node2D"]
 position = Vector2(-168, 2)
@@ -44,28 +44,28 @@ offset_left = 17.0
 offset_top = 39.0
 offset_right = 107.0
 offset_bottom = 99.0
-texture = ExtResource("2_pc4dj")
+texture = ExtResource("2_xwkaw")
 
 [node name="PitchKey2" parent="Node" instance=ExtResource("1_yu81d")]
 offset_left = 16.0
 offset_top = 119.0
 offset_right = 106.0
 offset_bottom = 179.0
-texture = ExtResource("3_tqynx")
+texture = ExtResource("3_8nff0")
 
 [node name="PitchKey3" parent="Node" instance=ExtResource("1_yu81d")]
 offset_left = 12.0
 offset_top = 198.0
 offset_right = 102.0
 offset_bottom = 258.0
-texture = ExtResource("4_wiywl")
+texture = ExtResource("4_hh65l")
 
 [node name="PitchKey4" parent="Node" instance=ExtResource("1_yu81d")]
 offset_left = 14.0
 offset_top = 272.0
 offset_right = 104.0
 offset_bottom = 332.0
-texture = ExtResource("5_msemt")
+texture = ExtResource("5_xpiyd")
 
 [node name="Node2" type="Node" parent="."]
 
@@ -108,7 +108,7 @@ color = Color(0.952941, 0.839216, 0.207843, 1)
 modulate = Color(0.917647, 0, 0, 1)
 position = Vector2(887, 307)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_udakt")
+texture = ExtResource("6_55515")
 
 [node name="Button" type="Button" parent="Node2/Node/Kick beat"]
 self_modulate = Color(1, 1, 1, 0)
@@ -120,12 +120,12 @@ scale = Vector2(22.08, 22.52)
 script = ExtResource("9_nisj6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Kick beat/Button"]
-stream = ExtResource("10_s5w7k")
+stream = ExtResource("8_2w4ng")
 
 [node name="Kick Drum" type="Sprite2D" parent="Node2/Node"]
 position = Vector2(777, 310)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_udakt")
+texture = ExtResource("6_55515")
 
 [node name="Button" type="Button" parent="Node2/Node/Kick Drum"]
 self_modulate = Color(1, 1, 1, 0)
@@ -137,12 +137,12 @@ scale = Vector2(22.48, 22.44)
 script = ExtResource("9_nisj6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Kick Drum/Button"]
-stream = ExtResource("11_kvpmf")
+stream = ExtResource("9_37o6c")
 
 [node name="Snare Drum" type="Sprite2D" parent="Node2/Node"]
 position = Vector2(887, 386)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_7cgqv")
+texture = ExtResource("10_qv4hc")
 
 [node name="Button" type="Button" parent="Node2/Node/Snare Drum"]
 self_modulate = Color(1, 1, 1, 0)
@@ -154,12 +154,12 @@ scale = Vector2(26.44, 24.96)
 script = ExtResource("9_nisj6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Snare Drum/Button"]
-stream = ExtResource("13_iwstf")
+stream = ExtResource("11_4axjp")
 
 [node name="Metal pipe" type="Sprite2D" parent="Node2/Node"]
-position = Vector2(929, 286)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_7ipfq")
+position = Vector2(904, 282)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("12_du365")
 
 [node name="Button" type="Button" parent="Node2/Node/Metal pipe"]
 self_modulate = Color(1, 1, 1, 0)
@@ -171,12 +171,12 @@ scale = Vector2(28.6, 24.32)
 script = ExtResource("9_nisj6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Metal pipe/Button"]
-stream = ExtResource("15_78nmi")
+stream = ExtResource("13_24ayo")
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(319, 622)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("6_3ehw3")
+texture = ExtResource("14_cyiw7")
 
 [node name="Sound Strings" parent="." instance=ExtResource("7_856p4")]
 position = Vector2(722, 62)

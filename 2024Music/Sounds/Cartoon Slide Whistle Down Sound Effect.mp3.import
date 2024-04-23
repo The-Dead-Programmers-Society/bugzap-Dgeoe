@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1xfjffxn0u5f"
+path="res://.godot/imported/Cartoon Slide Whistle Down Sound Effect.mp3-b60708ff2b20c8e9b9ff6103bba48457.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Cartoon Slide Whistle Down Sound Effect.mp3"
+dest_files=["res://.godot/imported/Cartoon Slide Whistle Down Sound Effect.mp3-b60708ff2b20c8e9b9ff6103bba48457.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

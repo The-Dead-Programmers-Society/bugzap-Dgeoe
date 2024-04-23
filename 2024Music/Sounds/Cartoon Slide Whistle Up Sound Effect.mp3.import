@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://38wwdnye8amf"
+path="res://.godot/imported/Cartoon Slide Whistle Up Sound Effect.mp3-6f843319a5015468f5284b5dcdb3031c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Cartoon Slide Whistle Up Sound Effect.mp3"
+dest_files=["res://.godot/imported/Cartoon Slide Whistle Up Sound Effect.mp3-6f843319a5015468f5284b5dcdb3031c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
