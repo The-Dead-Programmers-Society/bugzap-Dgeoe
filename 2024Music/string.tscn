@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5p7326nqm0l1"]
+
+[ext_resource type="Texture2D" uid="uid://rrjc161guihe" path="res://pivot.png" id="1_ukd3f"]
+[ext_resource type="Script" path="res://Handle.gd" id="2_d73ny"]
+[ext_resource type="Texture2D" uid="uid://bi7t73lo8numt" path="res://handle.png" id="2_ticag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omsty"]
+size = Vector2(30, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uegih"]
+size = Vector2(30, 30)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 33)
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(176, 71)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../Handle")
+length = 95.0
+damping = 2.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(177, 72)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(66, 13)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ukd3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_omsty")
+
+[node name="Handle" type="RigidBody2D" parent="."]
+position = Vector2(176, 164)
+scale = Vector2(1.3, 1.3)
+script = ExtResource("2_d73ny")
+
+[node name="Sprite2D" type="Sprite2D" parent="Handle"]
+position = Vector2(14, 14)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ticag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Handle"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_uegih")
+
+[node name="Button" type="Button" parent="Handle"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -14.0
+offset_top = -13.0
+offset_right = -6.0
+offset_bottom = -5.0
+scale = Vector2(3.8, 3.64)
+
+[node name="Handle2" type="RigidBody2D" parent="."]
+position = Vector2(276, 54)
+scale = Vector2(1.3, 1.3)
+mass = 0.15
+gravity_scale = 0.1
+script = ExtResource("2_d73ny")
+
+[node name="Sprite2D" type="Sprite2D" parent="Handle2"]
+position = Vector2(14, 14)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ticag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Handle2"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_uegih")
+
+[node name="Button" type="Button" parent="Handle2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -14.0
+offset_top = -13.0
+offset_right = -6.0
+offset_bottom = -5.0
+scale = Vector2(3.8, 3.64)
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="."]
+position = Vector2(177, 71)
+rotation = -1.7281
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../Handle2")
+length = 100.0
+initial_offset = 100.0
+
+[connection signal="button_down" from="Handle/Button" to="Handle" method="_on_button_button_down"]
+[connection signal="button_up" from="Handle/Button" to="Handle" method="_on_button_button_up"]
+[connection signal="button_down" from="Handle2/Button" to="Handle2" method="_on_button_button_down"]
+[connection signal="button_up" from="Handle2/Button" to="Handle2" method="_on_button_button_up"]

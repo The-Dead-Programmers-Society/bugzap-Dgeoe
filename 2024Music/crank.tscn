@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl8jcgb7howe8"]
+
+[ext_resource type="Texture2D" uid="uid://d0qna1pbx2u11" path="res://crank.png" id="1_na87q"]
+[ext_resource type="Script" path="res://Crank.gd" id="2_ik51i"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Pivot Point" type="Node2D" parent="."]
+position = Vector2(127, 56)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot Point"]
+position = Vector2(-38, 21)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_na87q")
+script = ExtResource("2_ik51i")
