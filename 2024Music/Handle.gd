@@ -1,19 +1,45 @@
 extends RigidBody2D
 
 var dragging = false
-var of = Vector2(0,0)
+var originalOffset = Vector2(0, 0)
 
-#called every frame
+# Declare variables to hold references to AudioStreamPlayer2D nodes
+var audioPlayer1: AudioStreamPlayer2D
+var audioPlayer2: AudioStreamPlayer2D
+
+func _ready():
+	# Assign references to AudioStreamPlayer2D nodes
+	audioPlayer1 = $AudioStreamPlayer2D
+	audioPlayer2 = $AudioStreamPlayer2D2
+
 func _process(delta):
 	if dragging:
-		position = get_global_mouse_position() -  of
-		
-func _on_button_button_down():
-	dragging =  true 
-	of = get_global_mouse_position()- global_position
-	$AudioStreamPlayer2D.play()
+		position = get_global_mouse_position() - originalOffset
 
+func _on_button_button_down():
+	dragging = true
+	originalOffset = get_global_mouse_position() - global_position
+	
+	if audioPlayer1:
+		play_audio_with_random_pitch(audioPlayer1)
 
 func _on_button_button_up():
 	dragging = false
-	$AudioStreamPlayer2D2.play()
+	
+	if audioPlayer2:
+		play_audio_with_random_pitch(audioPlayer2)
+
+# Function to play audio with randomized pitch
+func play_audio_with_random_pitch(player: AudioStreamPlayer2D):
+	if player:
+		var randomPitch = generate_random_pitch()
+		player.pitch_scale = randomPitch
+		player.play()
+	else:
+		print("AudioStreamPlayer2D node not found or invalid.")
+
+# Generate a random pitch value
+func generate_random_pitch():
+	var minPitch = 0.8
+	var maxPitch = 1.2
+	return randf_range(minPitch, maxPitch)

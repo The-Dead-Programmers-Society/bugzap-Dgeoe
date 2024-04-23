@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://4pkd0fyo0pfu"]
 
-[ext_resource type="Texture2D" uid="uid://bh2aovgj1gu6h" path="res://kick.png" id="1_mhpht"]
+[ext_resource type="Texture2D" uid="uid://1vghtwd18pwg" path="res://Textures/kick.png" id="1_mhpht"]
 [ext_resource type="Script" path="res://Button.gd" id="2_l257b"]
-[ext_resource type="AudioStream" uid="uid://7dumh5qe61v6" path="res://snare-112754.mp3" id="3_on0i6"]
-[ext_resource type="AudioStream" uid="uid://cs7ptchtyewfp" path="res://kick-183936.mp3" id="3_qnaq7"]
-[ext_resource type="AudioStream" uid="uid://c3a3n5b83bjyn" path="res://cinematic-trash-kick-loop-132274.mp3" id="3_v5aop"]
-[ext_resource type="Texture2D" uid="uid://bk25xaqvex3ba" path="res://snare.png" id="5_3hbny"]
-[ext_resource type="AudioStream" uid="uid://bhsy4r4g0kkqa" path="res://metal-pipe-foley-90737.mp3" id="6_1l3xm"]
-[ext_resource type="Texture2D" uid="uid://dpk5y65vligmr" path="res://pipe.png" id="6_bsqgj"]
+[ext_resource type="AudioStream" uid="uid://cftpysm54wdqm" path="res://Sounds/snare-112754.mp3" id="3_on0i6"]
+[ext_resource type="AudioStream" uid="uid://boy2my2ix7tqp" path="res://Sounds/kick-183936.mp3" id="3_qnaq7"]
+[ext_resource type="AudioStream" uid="uid://1rv8qenk4xnp" path="res://Sounds/cinematic-trash-kick-loop-132274.mp3" id="3_v5aop"]
+[ext_resource type="Texture2D" uid="uid://5nss7s463snk" path="res://Textures/snare.png" id="5_3hbny"]
+[ext_resource type="AudioStream" uid="uid://cx18orj60dx2b" path="res://Sounds/metal-pipe-foley-90737.mp3" id="6_1l3xm"]
+[ext_resource type="Texture2D" uid="uid://dddo7hhqlv41n" path="res://Textures/pipe.png" id="6_bsqgj"]
 
 [node name="Sound button" type="Node2D"]
 
