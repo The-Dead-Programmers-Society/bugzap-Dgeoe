@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2bb5yqrfpoiu"]
+[gd_scene load_steps=16 format=3 uid="uid://c2bb5yqrfpoiu"]
 
 [ext_resource type="PackedScene" uid="uid://i0mh07ofx6ux" path="res://Test.tscn" id="1_yu81d"]
 [ext_resource type="Texture2D" uid="uid://bkwpxqclin2yu" path="res://Solid_red.svg.png" id="2_pc4dj"]
@@ -7,6 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://beyg4emmvub1x" path="res://Solid_pink.svg.png" id="5_msemt"]
 [ext_resource type="Texture2D" uid="uid://od2mv04gs70m" path="res://LogoMusic.png" id="6_3ehw3"]
 [ext_resource type="PackedScene" uid="uid://c5p7326nqm0l1" path="res://string.tscn" id="7_856p4"]
+[ext_resource type="Texture2D" uid="uid://bh2aovgj1gu6h" path="res://kick.png" id="8_udakt"]
+[ext_resource type="Script" path="res://Button.gd" id="9_nisj6"]
+[ext_resource type="AudioStream" uid="uid://c3a3n5b83bjyn" path="res://cinematic-trash-kick-loop-132274.mp3" id="10_s5w7k"]
+[ext_resource type="AudioStream" uid="uid://cs7ptchtyewfp" path="res://kick-183936.mp3" id="11_kvpmf"]
+[ext_resource type="Texture2D" uid="uid://bk25xaqvex3ba" path="res://snare.png" id="12_7cgqv"]
+[ext_resource type="AudioStream" uid="uid://7dumh5qe61v6" path="res://snare-112754.mp3" id="13_iwstf"]
+[ext_resource type="Texture2D" uid="uid://dpk5y65vligmr" path="res://pipe.png" id="14_7ipfq"]
+[ext_resource type="AudioStream" uid="uid://bhsy4r4g0kkqa" path="res://metal-pipe-foley-90737.mp3" id="15_78nmi"]
 
 [node name="Instrument" type="Node2D"]
 position = Vector2(-168, 2)
@@ -94,11 +102,87 @@ scale = Vector2(14.5795, 9.93875)
 mouse_filter = 2
 color = Color(0.952941, 0.839216, 0.207843, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Node" type="Node" parent="Node2"]
+
+[node name="Kick beat" type="Sprite2D" parent="Node2/Node"]
+modulate = Color(0.917647, 0, 0, 1)
+position = Vector2(887, 307)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_udakt")
+
+[node name="Button" type="Button" parent="Node2/Node/Kick beat"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -242.0
+offset_top = -410.0
+offset_right = -234.0
+offset_bottom = -402.0
+scale = Vector2(22.08, 22.52)
+script = ExtResource("9_nisj6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Kick beat/Button"]
+stream = ExtResource("10_s5w7k")
+
+[node name="Kick Drum" type="Sprite2D" parent="Node2/Node"]
+position = Vector2(777, 310)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_udakt")
+
+[node name="Button" type="Button" parent="Node2/Node/Kick Drum"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -247.0
+offset_top = -410.0
+offset_right = -239.0
+offset_bottom = -402.0
+scale = Vector2(22.48, 22.44)
+script = ExtResource("9_nisj6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Kick Drum/Button"]
+stream = ExtResource("11_kvpmf")
+
+[node name="Snare Drum" type="Sprite2D" parent="Node2/Node"]
+position = Vector2(887, 386)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_7cgqv")
+
+[node name="Button" type="Button" parent="Node2/Node/Snare Drum"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -476.0
+offset_top = -372.0
+offset_right = -468.0
+offset_bottom = -364.0
+scale = Vector2(26.44, 24.96)
+script = ExtResource("9_nisj6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Snare Drum/Button"]
+stream = ExtResource("13_iwstf")
+
+[node name="Metal pipe" type="Sprite2D" parent="Node2/Node"]
+position = Vector2(929, 286)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_7ipfq")
+
+[node name="Button" type="Button" parent="Node2/Node/Metal pipe"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -339.0
+offset_top = -164.0
+offset_right = -331.0
+offset_bottom = -156.0
+scale = Vector2(28.6, 24.32)
+script = ExtResource("9_nisj6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Metal pipe/Button"]
+stream = ExtResource("15_78nmi")
+
+[node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(319, 622)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("6_3ehw3")
 
-[node name="Node2D" parent="." instance=ExtResource("7_856p4")]
+[node name="Sound Strings" parent="." instance=ExtResource("7_856p4")]
 position = Vector2(722, 62)
 scale = Vector2(2, 2)
+
+[connection signal="pressed" from="Node2/Node/Kick beat/Button" to="Node2/Node/Kick beat/Button" method="_on_pressed"]
+[connection signal="pressed" from="Node2/Node/Kick Drum/Button" to="Node2/Node/Kick Drum/Button" method="_on_pressed"]
+[connection signal="pressed" from="Node2/Node/Snare Drum/Button" to="Node2/Node/Snare Drum/Button" method="_on_pressed"]
+[connection signal="pressed" from="Node2/Node/Metal pipe/Button" to="Node2/Node/Metal pipe/Button" method="_on_pressed"]
