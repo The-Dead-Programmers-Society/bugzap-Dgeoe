@@ -1,15 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl8jcgb7howe8"]
+[gd_scene load_steps=7 format=3 uid="uid://bl8jcgb7howe8"]
 
+[ext_resource type="Script" path="res://RigidBody2D.gd" id="1_3nbrh"]
 [ext_resource type="Texture2D" uid="uid://cfb0k6lgj21ul" path="res://Textures/crank.png" id="1_na87q"]
-[ext_resource type="Script" path="res://Crank.gd" id="2_ik51i"]
+[ext_resource type="Texture2D" uid="uid://cu0tka1x1gxbj" path="res://Textures/pivotard.png" id="1_qpf54"]
+[ext_resource type="AudioStream" uid="uid://c668t654q56bh" path="res://Sounds/Royalty-Free Washboard Sound Effects Download - Google Chrome 2024-04-23 13-16-58.mp3" id="2_jx501"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqyvg"]
+size = Vector2(192, 86.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_od25h"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(10, 25)
+scale = Vector2(2, 2)
 
-[node name="Pivot Point" type="Node2D" parent="."]
-position = Vector2(127, 56)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(247.5, 74.5)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("1_qpf54")
 
-[node name="Sprite2D" type="Sprite2D" parent="Pivot Point"]
-position = Vector2(-38, 21)
-scale = Vector2(0.2, 0.2)
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(164, 109)
+script = ExtResource("1_3nbrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-1, -2.86102e-06)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_na87q")
-script = ExtResource("2_ik51i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-3.5, 14.25)
+shape = SubResource("RectangleShape2D_oqyvg")
+
+[node name="Button" type="Button" parent="RigidBody2D"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -48.0
+offset_top = -29.0
+offset_right = -40.0
+offset_bottom = -21.0
+scale = Vector2(11.72, 7.48)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+stream = ExtResource("2_jx501")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(238, 68.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_od25h")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(238, 69)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c2bb5yqrfpoiu"]
+[gd_scene load_steps=21 format=3 uid="uid://c2bb5yqrfpoiu"]
 
 [ext_resource type="PackedScene" uid="uid://i0mh07ofx6ux" path="res://Test.tscn" id="1_yu81d"]
 [ext_resource type="Texture2D" uid="uid://dnm42e3d2rnvx" path="res://Textures/Solid_red.svg.png" id="2_xwkaw"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://de1b6vcpotb6q" path="res://Textures/LogoMusic.png" id="14_cyiw7"]
 [ext_resource type="PackedScene" uid="uid://7rhguq4bgk24" path="res://face_animation.tscn" id="15_gij3u"]
 [ext_resource type="PackedScene" uid="uid://dknilarsgh5ec" path="res://Sliders.tscn" id="16_g80ky"]
+[ext_resource type="PackedScene" uid="uid://bl8jcgb7howe8" path="res://crank.tscn" id="16_vn2am"]
 [ext_resource type="Texture2D" uid="uid://d02fiahe7mp4" path="res://Textures/pivot.png" id="17_caatu"]
 
 [node name="Instrument" type="Node2D"]
@@ -201,6 +202,10 @@ script = ExtResource("9_nisj6")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2/Node/Metal pipe/Button"]
 stream = ExtResource("13_24ayo")
+
+[node name="Node2D" parent="Node2" instance=ExtResource("16_vn2am")]
+position = Vector2(298, 274)
+scale = Vector2(1, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(319, 622)
