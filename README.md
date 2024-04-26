@@ -220,3 +220,49 @@ Write sketches to draw the following shapes:
 ![Sketch](images/pizza.png)
 
 ![Sketch](images/p1.2.png)
+
+## Week 25 
+
+====================================================================
+Explanation of design document for final programming assignment 2024
+=======================================================================
+Name: Joseph O'Shea
+Student Number: C23382866
+
+
+Original Concept
+===================================================================
+Inspired by the playdate by house house
+
+Includes: Snare drum and kick drum buttons
+          A crank that the player can spin/crank to produce saxophone/trombone sounds depending on the direction
+          A midi piano at the base 
+          A pullable string that produces funny sounds
+          An animated display in the center
+          Pitch Shifters the player can drag and drop onto the top of the machine
+
+Name: Symphonic Script/The Code Conductor
+
+![Sketch](Research_on_instrument/Programming_instrument_design_doc.png)
+
+CHANGES 
+=============================
+- removed piano
+- added a pitch randomizer on all audio stream players to make creating and performing music feel more "flow-like"
+- Crank is no longer used by my mouse but instead the left and right arrow keys
+- Crank is a scrubboard/washboard now not a saxophone
+- Drag and Drop sounds are controlled in an array and due to the pitch randomizers they now have unique sounds instead of changing the pitch themselves
+- Kick drum also has an accompanying Kick Drum beat you can play
+- Added a metal pipe falling sound button
+- Name finalized as The Code Conductor
+- Added 2 strings, not 1, one is linked to a spring joint, and the other a grove joint
+- Volume slider added
+
+         
+IN CLASS PRESENTATION
+==========================================
+-went well
+-showed off all elements of code and instrument 
+-happy with my code and how i performed in front of the class
+
+ 
