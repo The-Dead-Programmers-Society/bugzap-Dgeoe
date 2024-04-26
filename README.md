@@ -228,6 +228,7 @@ Explanation of design document for final programming assignment 2024
 =======================================================================
 Name: Joseph O'Shea
 Student Number: C23382866
+The instrument can be played in the instrument.tcsm scene in the folder "2024Music"
 
 
 Original Concept
@@ -243,7 +244,9 @@ Includes: Snare drum and kick drum buttons
 
 Name: Symphonic Script/The Code Conductor
 
-![Sketch](Research on instrument/Programming instrument design doc.png)
+The photo below is not displaying on Read.md but can be viewed at the path below
+(Research on instrument/Programming instrument design doc.png)
+^In the folder Research on instrument below game design examples
 
 CHANGES 
 =============================
