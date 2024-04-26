@@ -7,6 +7,7 @@ var soundPlayer: AudioStreamPlayer2D
 func _ready():
 	soundPlayer = $AudioStreamPlayer2D  
 
+#Crank swing movemnt on pinjoint 2D 
 func _process(delta):
 	if Input.is_action_pressed("move_right"):
 		apply_force(Vector2.LEFT * FORCE_AMOUNT, Vector2.ZERO)
@@ -23,7 +24,6 @@ func play_sound_effect():
 		# Set the pitch of the audio player
 		soundPlayer.pitch_scale = randomPitch
 		
-		# Play the audio with the randomized pitch
 		soundPlayer.play()
 
 # Generate a random pitch value

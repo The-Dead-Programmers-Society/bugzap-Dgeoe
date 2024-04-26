@@ -1,4 +1,4 @@
-extends AnimationPlayer  # Change to the appropriate node type of your scene
+extends AnimationPlayer  
 
 func _ready():
 	play("idle")

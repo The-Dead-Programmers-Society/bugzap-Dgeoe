@@ -8,7 +8,6 @@ var audioPlayer1: AudioStreamPlayer2D
 var audioPlayer2: AudioStreamPlayer2D
 
 func _ready():
-	# Assign references to AudioStreamPlayer2D nodes
 	audioPlayer1 = $AudioStreamPlayer2D
 	audioPlayer2 = $AudioStreamPlayer2D2
 
@@ -29,7 +28,7 @@ func _on_button_button_up():
 	if audioPlayer2:
 		play_audio_with_random_pitch(audioPlayer2)
 
-# Function to play audio with randomized pitch
+# play audio with randomized pitch
 func play_audio_with_random_pitch(player: AudioStreamPlayer2D):
 	if player:
 		var randomPitch = generate_random_pitch()
@@ -38,7 +37,7 @@ func play_audio_with_random_pitch(player: AudioStreamPlayer2D):
 	else:
 		print("AudioStreamPlayer2D node not found or invalid.")
 
-# Generate a random pitch value
+# pitch randomizer
 func generate_random_pitch():
 	var minPitch = 0.8
 	var maxPitch = 1.2

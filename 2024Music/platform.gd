@@ -1,3 +1,7 @@
+#old drag and drop method not using tweening
+#found on youtube at https://www.youtube.com/watch?v=uhgswVkYp0o&ab_channel=Dicode
+#broke other elements of my instrument so I tried to write my own
+#mine is not as smooth visually as the original but works significantly better with audio 
 extends StaticBody2D
 
 func _ready():

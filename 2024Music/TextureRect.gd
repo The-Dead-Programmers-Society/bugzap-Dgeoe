@@ -1,3 +1,6 @@
+#My drag and drop script, its alot more messy than the original (platform.gd)
+#however its wholly original and writting it myself allowed me to hav eit work in tandum with the other elements of the instrument
+
 extends TextureRect
 
 var audioPlayer1: AudioStreamPlayer2D
@@ -6,14 +9,14 @@ var audioPlayer3: AudioStreamPlayer2D
 var audioPlayer4: AudioStreamPlayer2D
 
 func _ready():
-	# Assign references to AudioStreamPlayer2D nodes
+	# Assign references to AudioStreamPlayer nodes
 	audioPlayer1 = $AudioStreamPlayer2D
 	audioPlayer2 = $AudioStreamPlayer2D2
 	audioPlayer3 = $AudioStreamPlayer2D3
 	audioPlayer4 = $AudioStreamPlayer2D4
 
 func playRandomSound():
-	var randomIndex = randi() % 4 + 1  # Generates a random number between 1 to 4
+	var randomIndex = randi() % 4 + 1  # Generates a random number between 1 to 4 for sound effects
 	match randomIndex:
 		1:
 			play_audio_with_random_pitch(audioPlayer1)
@@ -24,7 +27,7 @@ func playRandomSound():
 		4:
 			play_audio_with_random_pitch(audioPlayer4)
 
-# Function to play audio with randomized pitch
+# play obove sound effects with randomized pitch
 func play_audio_with_random_pitch(player: AudioStreamPlayer2D):
 	if player:
 		var randomPitch = generate_random_pitch()
@@ -33,7 +36,7 @@ func play_audio_with_random_pitch(player: AudioStreamPlayer2D):
 	else:
 		print("AudioStreamPlayer2D node not found or invalid.")
 
-# Generate a random pitch value
+# Generates random pitch value
 func generate_random_pitch():
 	var minPitch = 0.8
 	var maxPitch = 1.2
