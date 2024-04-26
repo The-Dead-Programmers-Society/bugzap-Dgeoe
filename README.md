@@ -243,13 +243,13 @@ Includes: Snare drum and kick drum buttons
 
 Name: Symphonic Script/The Code Conductor
 
-![Sketch](Research_on_instrument/Programming_instrument_design_doc.png)
+![Sketch](Researchoninstrument/Programminginstrumentdesigndoc.png)
 
 CHANGES 
 =============================
 - removed piano
 - added a pitch randomizer on all audio stream players to make creating and performing music feel more "flow-like"
-- Crank is no longer used by my mouse but instead the left and right arrow keys
+- Crank is no longer controlled by the mouse but instead by the left and right arrow keys
 - Crank is a scrubboard/washboard now not a saxophone
 - Drag and Drop sounds are controlled in an array and due to the pitch randomizers they now have unique sounds instead of changing the pitch themselves
 - Kick drum also has an accompanying Kick Drum beat you can play
@@ -263,6 +263,6 @@ IN CLASS PRESENTATION
 ==========================================
 -went well
 -showed off all elements of code and instrument 
--happy with my code and how i performed in front of the class
+-happy with my code and how I performed in front of the class
 
  
