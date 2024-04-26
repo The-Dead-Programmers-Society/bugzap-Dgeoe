@@ -243,7 +243,7 @@ Includes: Snare drum and kick drum buttons
 
 Name: Symphonic Script/The Code Conductor
 
-![Sketch](Researchoninstrument/Programminginstrumentdesigndoc.png)
+![Sketch](Research on instrument/Programming instrument design doc.png)
 
 CHANGES 
 =============================
